@@ -1,9 +1,33 @@
-html,
-body {
-  padding: 0;
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 100;
+  box-sizing: border-box;
+  line-height: 3.2rem;
+  background: #fafafb;
+  padding: 1.8rem;
+}
+
+@media (min-width: 945px) {
+  body {
+    padding: 2.4rem 7.2rem;
+  }
+}
+
+img {
+  width: 100%;
+  object-fit: fill;
 }
 
 a {
@@ -11,6 +35,61 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+/* ---- BACKGROUND LOGIN / SIGNUP */
+@media (min-width: 600px) {
+  .background__auth {
+    border: 1px solid #bdbdbd;
+    border-radius: 0.8rem;
+    padding: 5rem;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 800px) {
+  .background__auth {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1100px) {
+  .background__auth {
+    width: 40%;
+  }
+}
+@media (min-width: 1375px) {
+  .background__auth {
+    width: 30%;
+  }
+}
+/* ---- TEXT ----- */
+.text-primary {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3.5rem;
+}
+
+.text-secondary {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+}
+
+.text-tertiary {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.9rem;
+  color: #828282;
+}
+/* ---- SPACING ---- */
+.u-spacing-3 {
+  margin: 3.4rem 0;
+}
+
+/* ---- BUTTONS --- */
+
+.btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }

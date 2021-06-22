@@ -1,0 +1,12 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+}
+.header__logo_box{
+    width: 13rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
