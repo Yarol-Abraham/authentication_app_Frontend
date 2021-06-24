@@ -28,6 +28,7 @@ body {
 img {
   width: 100%;
   object-fit: fill;
+  border-radius: 0.8rem;
 }
 
 a {
@@ -69,6 +70,25 @@ a {
   line-height: 3.5rem;
 }
 
+.text-primary-md {
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.9rem;
+}
+
+.text-primary-fm {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.7rem;
+  color: #bdbdbd;
+}
+
+.text-primary-big {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 3.2rem;
+}
+
 .text-secondary {
   font-size: 1.6rem;
   font-weight: 400;
@@ -81,9 +101,20 @@ a {
   line-height: 1.9rem;
   color: #828282;
 }
+
+/* UTILS */
+
+.text-center {
+  text-align: center;
+}
+
 /* ---- SPACING ---- */
 .u-spacing-3 {
   margin: 3.4rem 0;
+}
+
+.u-spacing-4 {
+  margin: 4rem 0;
 }
 
 /* ---- BUTTONS --- */
@@ -92,4 +123,5 @@ a {
   border: none;
   background: transparent;
   cursor: pointer;
+  outline: none;
 }

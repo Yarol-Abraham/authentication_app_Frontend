@@ -1,12 +1,72 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-items: center;
+.header {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  position: relative;
 }
-.header__logo_box{
-    width: 13rem;
-    display: flex;
-    justify-items: center;
-    align-items: center;
+.header__logo_box {
+  width: 13rem;
+}
+
+.btn_user {
+  width: 5.2rem;
+  height: 5.6rem;
+}
+
+.name_user {
+  display: none;
+}
+
+@media (min-width: 645px) {
+  .name_user {
+    display: block;
+  }
+}
+
+.header__options {
+  position: absolute;
+  right: 0;
+  bottom: -13rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0.8rem;
+  width: 16rem;
+  background: #fff;
+  border-radius: 0.8rem;
+}
+
+.options__item {
+  border-radius: 0.8rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.options__item_img {
+  width: 4rem;
+}
+
+.hideOptions {
+  display: flex;
+}
+
+.header__options_link {
+  width: 100%;
+  text-align: center;
+  line-height: 3.5rem;
+}
+.options__item:last-child {
+  border-radius: 0;
+  border-top: 1px solid #f2f2f2;
+}
+.options__item:last-child .header__options_link {
+  color: red;
+}
+.options__item:hover {
+  background: #f2f2f2;
 }
