@@ -35,7 +35,10 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+/* for alerts */
+.section {
+  position: relative;
+}
 /* ---- BACKGROUND LOGIN / SIGNUP */
 @media (min-width: 600px) {
   .background__auth {
@@ -109,6 +112,9 @@ a {
 }
 
 /* ---- SPACING ---- */
+.u-spacing-1 {
+  margin: 1.4rem 0;
+}
 .u-spacing-3 {
   margin: 3.4rem 0;
 }
@@ -124,4 +130,68 @@ a {
   background: transparent;
   cursor: pointer;
   outline: none;
+}
+
+/* /components/utils/alerts - UTILS */
+/* Loading */
+.component_loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lds_ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds_ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #2f80ed;
+  border-radius: 50%;
+  animation: lds_ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #2f80ed transparent transparent transparent;
+}
+.lds_ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds_ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds_ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds_ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.alert {
+  width: 100%;
+  position: absolute;
+  top: 1rem;
+  text-align: center;
+  color: #fafafb;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+}
+.alert--success {
+  background: #2f80ed;
+}
+
+.alert--Fail {
+  background: red;
 }

@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import headerCSS from '../../styles/_header.module.css';
 import Link from 'next/link';
+import useAuth from '../hooks/useAuth';
 
 function Header() {
     const [ menuOPtions, setMenuOptions ] = useState(false);
+    const { auth } = useAuth();
     const router = useRouter();
     const routerPath = router.asPath === '/login' || router.asPath === '/signup' ? false : true;
     const onClickToggleOptions = function() {
@@ -37,7 +39,7 @@ function Header() {
                                         alt="user" 
                                         className={headerCSS.img_user}
                                     />
-                                    <p className={`text-primary-sm ${headerCSS.name_user}`}>Yarol Abraham</p>
+                                    <p className={`text-primary-sm ${headerCSS.name_user}`}>Yarol</p>
                                 </button>
                                 <div className={`${headerCSS.header__options} ${menuOPtions ? headerCSS.hideOptions : ''}`}>
                                    <div className={headerCSS.options__item}>
