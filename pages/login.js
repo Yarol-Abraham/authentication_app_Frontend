@@ -34,7 +34,7 @@ function Login() {
                
                 <form 
                     onSubmit={handleSubmit}
-                    className={`${formsCSS.form__auth} u-spacing-3 html_app`}
+                    className={`${formsCSS.form__auth} u-spacing-1 html_app`}
                 >
                      <div className="u-spacing-1">
                         <p className="text-primary">

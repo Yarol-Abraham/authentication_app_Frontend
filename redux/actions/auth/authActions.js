@@ -7,6 +7,15 @@ import {
     authFail
 } from './authDispatch';
 
+export function signup(data) {
+    return async (dispatch)=>{
+        try {
+            const response = await axios.post('auth/signup', data);
+            dispatch( authLogin({ data: response.data, success: true }) );
+        } catch (error) { throw error; }
+    }
+}
+
 export function login(data) {
     return async (dispatch)=>{
         try {

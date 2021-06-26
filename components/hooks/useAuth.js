@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
+    signup,
     login,
     loginSuccess,
     loginLogout
@@ -24,12 +25,21 @@ const sendMessage = function(data, msg = "An unexpected error has occurred", sta
 function useAuth() {
     const dispatch = useDispatch();
     // DISPATCH
+    const _signup = (data)=> dispatch( signup(data) );
     const _login = (data)=> dispatch( login(data) );
     const _loginSuccess = (token)=> dispatch( loginSuccess(token) );
     const _loginLogout = ()=> dispatch( loginLogout() );
     // SELECTOR
     const auth =  useSelector( state => state.auth );
     // HANDLES
+    const handleSignup = async function(data) {
+        try {
+            showLoading();
+            await _signup(data);
+            hideLoading();
+        } catch (error) { sendMessage(error.response.data); }
+     }
+
     const handleLogin = async function(data) {
         try {
             showLoading();
@@ -47,6 +57,7 @@ function useAuth() {
     const handleloginLogout = function () { _loginLogout(); }
 
     return {
+        handleSignup,
         handleLogin,
         handleLoginSuccess,
         handleloginLogout,
