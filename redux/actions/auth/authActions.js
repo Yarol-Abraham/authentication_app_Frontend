@@ -2,6 +2,7 @@ import axios from '../../../config/axios';
 import tokenAuth from '../../../config/tokenAuth';
 import { 
     authLogin, 
+    authLogout,
     authSuccess, 
     authFail
 } from './authDispatch';
@@ -23,9 +24,13 @@ export function loginSuccess(token) {
             dispatch( authSuccess({ data: response.data.data, success: true }) );
             return response.data.data;
         } catch (error) {
-            const message = error.response.data.message || "error.response.data.message";
+            const message = error.response.data.message || "An unexpected error has occurred";
             dispatch( authFail({ message, fail: true  }) )
             throw error;
          }
     }
+};
+
+export function loginLogout() {
+    return (dispatch)=>{ dispatch( authLogout({ data: null, success: false }) ) };
 };

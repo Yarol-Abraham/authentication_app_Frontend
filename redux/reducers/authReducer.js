@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie';
 import {
     AUTH_LOGIN,
+    AUTH_LOGOUT,
     AUTH_SUCCESS,
     AUTH_FAIL
 } from '../types/auth';
@@ -17,6 +18,9 @@ const sendToken = (token)=>{
         expires: new Date( Date.now() + process.env.EXPIRE_TOKEN * 24 * 60 * 60 * 1000 )
     });
 };
+
+const removeToken = ()=>{ Cookies.remove('jwt') }
+
 function authReducer( state = initialState, action ) {
     
     switch(action.type){
@@ -26,6 +30,14 @@ function authReducer( state = initialState, action ) {
             return{
                 ...state,
                 user: action.payload.data.data,
+                success: action.payload.success
+            }
+            
+        case AUTH_LOGOUT:
+            removeToken();
+            return{
+                ...state,
+                user: action.payload.data,
                 success: action.payload.success
             }
 

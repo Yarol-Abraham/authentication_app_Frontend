@@ -2,13 +2,13 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {
     login,
-    loginSuccess
+    loginSuccess,
+    loginLogout
 } from '../../redux/actions/auth/authActions';
 
 import {
     showLoading,
     hideLoading,
-    hideAlert,
     showAlert
 } from '../utils/alert';
 
@@ -26,6 +26,7 @@ function useAuth() {
     // DISPATCH
     const _login = (data)=> dispatch( login(data) );
     const _loginSuccess = (token)=> dispatch( loginSuccess(token) );
+    const _loginLogout = ()=> dispatch( loginLogout() );
     // SELECTOR
     const auth =  useSelector( state => state.auth );
     // HANDLES
@@ -43,9 +44,12 @@ function useAuth() {
         } catch (error) { throw error; }
     }
 
+    const handleloginLogout = function () { _loginLogout(); }
+
     return {
         handleLogin,
         handleLoginSuccess,
+        handleloginLogout,
         auth
     }
 };
