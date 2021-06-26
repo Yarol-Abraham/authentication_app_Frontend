@@ -1,9 +1,10 @@
-import Layout from "../components/layout/layout";
+import Edit from '../components/profile/edit';
+import Protect from "../components/protect/protect";
 
 export default function EditProfile() {
   return (
-    <Layout>
-      <h1>Hola desde el EditProfile</h1>
-    </Layout>
+    <Protect>
+      <Edit />
+    </Protect>
   )
 }

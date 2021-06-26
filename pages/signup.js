@@ -45,7 +45,7 @@ function Signup() {
                     </div>
                     <div className={formsCSS.form__auth_item}>
                         <div className={formsCSS.form__auth_item__icon}>
-                            <img src="/images/user.svg" alt="name" />
+                            <img src="/images/account.svg" alt="name" />
                         </div>
                         <input
                             type="text"

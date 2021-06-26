@@ -8,7 +8,8 @@ function Header() {
     const [ menuOPtions, setMenuOptions ] = useState(false);
     const { handleloginLogout, auth : { user } } = useAuth();
     const router = useRouter();
-    const routerPath = router.asPath === '/login' || router.asPath === '/signup' ? false : true;
+    const routerPathAuth = router.asPath === '/login' || router.asPath === '/signup' ? false : true;
+    const routerPathProfile = router.asPath === '/' ? "/editProfile" : "/"; 
     const onClickToggleOptions = function() {
         setMenuOptions(!menuOPtions);
     }
@@ -33,7 +34,7 @@ function Header() {
                     </a>
                 </Link>
                 {
-                    routerPath ?
+                    routerPathAuth ?
                         (
                             <>
                                 <button 
@@ -41,7 +42,7 @@ function Header() {
                                     onClick={onClickToggleOptions}
                                 >
                                     <img 
-                                        src="/images/19-test1@correo.com.jpeg" 
+                                        src={`${process.env.REACT_APP_DEV_PHOTO}${user?.photo}`}
                                         alt="user" 
                                         className={headerCSS.img_user}
                                     />
@@ -54,8 +55,10 @@ function Header() {
                                             alt="account" 
                                             className={headerCSS.options__item_img}
                                         />
-                                        <Link href="/editProfile">
-                                            <a className={`text-primary-fm ${headerCSS.header__options_link}`}>Edit profile</a>
+                                        <Link href={`${routerPathProfile}`}>
+                                            <a className={`text-primary-fm ${headerCSS.header__options_link}`}>
+                                                { routerPathProfile === '/editProfile' ? "Edit profile" : "Profile" }
+                                            </a>
                                         </Link>
                                    </div>
                                    <div className={headerCSS.options__item}>
