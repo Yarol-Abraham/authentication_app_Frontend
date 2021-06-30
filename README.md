@@ -1,3 +1,20 @@
+# Authentication app - frontend
+
+Solution for a challenge from <a href="https://devchallenges.io/">devchallenges</a>
+
+<ul>
+    <li><a href="https://devchallenges.io/challenges/N1fvBjQfhlkctmwj1tnw">Challenge</a></li>
+    <li><a href="https://authenticationya.vercel.app/login">Demo</a></li>
+</ul>
+
+# Preview
+
+<img src="/public/images/challenge.png" alt="preview" />
+
+# Authentication app - Backend
+
+<a href="https://github.com/Yarol-Abraham/authentication_app">authentication_app</a>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
