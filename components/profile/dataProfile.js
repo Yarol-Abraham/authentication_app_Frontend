@@ -1,20 +1,13 @@
 import { useEffect, useState } from 'react';
 import profileCSS from '../../styles/profile.module.css';
 import useAuth from '../hooks/useAuth';
-
+import { formatData } from '../utils/formatData';
 function DataProfile() {
   const [ data, setData ] = useState({});
   const { auth: { user } } = useAuth();
 
-  const formatData = function (data, ...allowFields) {
-    let newData = {};
-      Object.keys(data).forEach(el =>{
-        if( allowFields.includes(el) ) newData[el] = data[el];
-      });
-      setData(newData);
-  };
   useEffect(()=>{
-    formatData(user, 'photo','name', 'bio', 'email', 'phone');
+    setData(formatData(user, 'photo','name', 'bio', 'email', 'phone'));
   }, [])
     return (
     <>

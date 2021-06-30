@@ -100,7 +100,7 @@ function Signup() {
                     <input
                         type="submit"
                         value="Start coding now"
-                        className={`btn ${formsCSS.form__auth_submit}`}
+                        className={`btn btn__blue`}
                     />
                 </form>
                 <Auth paragraph="Adready a member?" link="/login" nameLink="Login" />

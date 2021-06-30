@@ -123,6 +123,10 @@ a {
   margin: 4rem 0;
 }
 
+.rl-spacing-1 {
+  margin: 0 1.4rem;
+}
+
 /* ---- BUTTONS --- */
 
 .btn {
@@ -130,6 +134,20 @@ a {
   background: transparent;
   cursor: pointer;
   outline: none;
+}
+
+.btn__blue {
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  background: #2f80ed;
+  color: #ffff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+}
+
+.btn__sm {
+  width: 10rem;
 }
 
 /* /components/utils/alerts - UTILS */

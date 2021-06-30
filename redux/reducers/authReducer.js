@@ -5,7 +5,9 @@ import {
     AUTH_SUCCESS,
     AUTH_FAIL
 } from '../types/auth';
-
+import {
+    USER_EDIT
+} from '../types/user';
 const initialState = {
     user: null,
     success: false,
@@ -53,6 +55,12 @@ function authReducer( state = initialState, action ) {
                 ...state,
                 fail: action.payload.fail,
                 message: action.payload.message
+            }
+        
+        case USER_EDIT: 
+            return {
+                ...state,
+                user: action.payload.user
             }
 
         default:

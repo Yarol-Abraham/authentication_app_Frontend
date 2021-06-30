@@ -71,7 +71,7 @@ function Login() {
                     <input
                         type="submit"
                         value="Login"
-                        className={`btn ${formsCSS.form__auth_submit}`}
+                        className={`btn btn__blue`}
                     />
                 </form>
                 <Auth paragraph="Don’t have an account yet?" link="/signup" nameLink="Register" />
