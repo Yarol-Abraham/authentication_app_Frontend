@@ -79,7 +79,7 @@ function Edit() {
                             className={editProfileCSS.form__upload}
                             onChange={ handlePhoto }
                         />
-                         <img src={`${process.env.REACT_APP_DEV_PHOTO}${data?.photo}`} alt="user" />
+                         <img src={`${process.env.REACT_APP_PROD_PHOTO}${data?.photo}`} alt="user" />
                    </div>
                     <label className="text-primary-fm"> { photo.name ? photo.name : "CHANGE PHOTO" } </label>
                 </div>

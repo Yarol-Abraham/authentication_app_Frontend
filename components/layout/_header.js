@@ -42,7 +42,7 @@ function Header() {
                                     onClick={onClickToggleOptions}
                                 >
                                     <img 
-                                        src={`${process.env.REACT_APP_DEV_PHOTO}${user?.photo}`}
+                                        src={`${process.env.REACT_APP_PROD_PHOTO}${user?.photo}`}
                                         alt="user" 
                                         className={headerCSS.img_user}
                                     />

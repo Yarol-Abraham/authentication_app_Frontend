@@ -22,7 +22,7 @@ function DataProfile() {
             </div>
             <div className={ me === "photo" ? profileCSS.profile__img_field : profileCSS.profile__data_field}>
                 { 
-                me === "photo" ? <img src={`${process.env.REACT_APP_DEV_PHOTO}${data[me]}`} alt={`${data[me]}`} /> : 
+                me === "photo" ? <img src={`${process.env.REACT_APP_PROD_PHOTO}${data[me]}`} alt={`${data[me]}`} /> : 
                 <p className="text-secondary">{data[me]}</p>
               }
             </div>
